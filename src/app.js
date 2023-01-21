@@ -32,7 +32,7 @@ app.get("/",(req,res)=>{
 })
 
 app.get("/call",(req,res)=>{
-    res.render("index")
+    res.render("index",{app:process.env.APP_ID})
 })
 app.listen(PORT,()=>{
     console.log(`app has started on ${PORT}`)

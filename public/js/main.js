@@ -165,6 +165,7 @@ let leaveChannel = async ()=>{
 
 let toggleCamera = async()=>{
     let videoTrack = localStream.getTracks().find(track=> track.kind === "video")
+    
 
     if(videoTrack.enabled){
         videoTrack.enabled = false
@@ -172,6 +173,8 @@ let toggleCamera = async()=>{
     } else{
         videoTrack.enabled = true
         document.getElementById("camera-btn").style.backgroundColor = "rgb(179,102,249, .9)"
+        const video = localVideo.attach();
+        video.style.transform = 'scale(-1, 1)';
 
     }
 }
